@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📖 TogetherCone
 
-## Getting Started
+TogetherCone is a simple AI-powered application that allows users to store text in **Pinecone** and retrieve relevant information using **Together AI** for answering queries.
 
-First, run the development server:
+🔗 **Live Demo**: [togethercone-jpq9.vercel.app](https://togethercone-jpq9.vercel.app)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **📂 Store text in Pinecone**: Save important text snippets for later retrieval.
+- **💡 Ask AI**: Ask questions, and Together AI will generate answers based on relevant Pinecone-stored data.
+- **🔑 API Key Management**: Securely store API keys in cookies (valid for 7 days).
+- **⚡ Fast Vector Search**: Uses **Pinecone** for fast similarity-based document retrieval.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🛠️ Technical Specifications
 
-To learn more about Next.js, take a look at the following resources:
+- **Framework**: [Next.js (App Router)](https://nextjs.org/docs)
+- **Frontend**: React with Tailwind CSS
+- **Database**: [Pinecone](https://www.pinecone.io/) for vector storage and similarity search
+- **LLM**: [Together AI](https://www.together.ai/) for text-based AI responses
+- **State Management**: React Hooks (`useState`, `useEffect`)
+- **Data Storage**: API keys stored in **cookies** for security
+- **Deployment**: Vercel ([Live URL](https://togethercone-jpq9.vercel.app))
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🏗️ How to Run Locally
 
-## Deploy on Vercel
+1. **Clone the repository**  
+   ```bash
+   git clone https://github.com/your-repo/togethercone.git
+   cd togethercone
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Install dependencies**  
+   ```bash
+   npm install
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. **Set up environment variables**  
+   Create a `.env.local` file in the root directory and add your API keys:
+
+   ```plaintext
+   PINECONE_API_KEY=your_pinecone_key
+   PINECONE_INDEX_NAME=your_index_name
+   TOGETHER_API_KEY=your_together_ai_key
+   ```
+
+4. **Start the development server**  
+   ```bash
+   npm run dev
+   ```
+   The app will be available at `http://localhost:3000`
+
+5. **For production build & serve**  
+   ```bash
+   npm run build
+   npm start
+   ```
+
+---
+
+## ⚠️ Security Notice
+
+- **Do not use the app on shared or public computers** since API keys are stored in cookies.
+- **Cookies expire in 7 days** for security purposes.
+- **Always keep your API keys private** and do not share them publicly.
+
+---
+
+## 📚 How to Use the App
+
+### 🔑 **Step 1: Set API Keys**
+1. Get **Pinecone API Key** & **Index** from [Pinecone.io](https://www.pinecone.io/)
+2. Get **Together AI API Key** from [Together.ai](https://www.together.ai/)
+3. Open the app and go to **API Keys** page (`/`)
+4. Enter the keys and click **Save**
+
+### 📂 **Step 2: Store Text in Pinecone**
+1. Go to **Store in Pinecone** (`/store`)
+2. Enter the text you want to save
+3. Click **Store in Pinecone**
+
+### 💡 **Step 3: Ask AI a Question**
+1. Go to **Ask Together AI** (`/ask`)
+2. Enter a question
+3. Click **Ask AI**
+4. The app will retrieve the most relevant stored text and generate an AI-powered answer.
+
+---
+
+## 📜 License
+
+This project is **MIT Licensed** – free to use and modify.
+
+---
+
+🚀 **Enjoy using TogetherCone!** 🎉
