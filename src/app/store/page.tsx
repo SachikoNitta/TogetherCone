@@ -6,6 +6,7 @@ export default function StorePage() {
   const [status, setStatus] = useState("");
 
   const storeData = async () => {
+    if (!text.trim()) return; // Prevent empty submissions
     setStatus("Storing data... ⏳");
 
     try {
@@ -28,6 +29,7 @@ export default function StorePage() {
 
       const result = JSON.parse(textResponse);
       setStatus(result.message || "✅ Stored successfully!");
+      setText(""); // Clear input after successful storage
 
     } catch (error) {
       if (error instanceof Error) {
@@ -53,10 +55,14 @@ export default function StorePage() {
           className="w-full p-4 border border-gray-300 rounded-lg shadow-md focus:ring-2 focus:ring-green-500 focus:outline-none resize-none h-60 text-lg"
         ></textarea>
 
-        {/* Store Button */}
+        {/* Store Button - Disabled when input is empty */}
         <button
           onClick={storeData}
-          className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-3 rounded-lg font-bold text-xl hover:opacity-90 transition-all duration-300 shadow-lg"
+          disabled={!text.trim()} // Disable when text is empty
+          className={`w-full px-6 py-3 rounded-lg font-bold text-xl shadow-lg transition-all duration-300
+            ${text.trim() 
+              ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:opacity-90" 
+              : "bg-gray-300 text-gray-500 cursor-not-allowed"}`}
         >
           📥 テキストを保存
         </button>

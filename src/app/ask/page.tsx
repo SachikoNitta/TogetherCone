@@ -7,6 +7,7 @@ export default function AskPage() {
   const [completeQuestion, setCompleteQuestion] = useState("");
 
   const askAI = async () => {
+    if (!question.trim()) return; // Prevent empty submissions
     setAnswer("Thinking... 🤔"); // Show loading message
 
     try {
@@ -52,10 +53,14 @@ export default function AskPage() {
           className="w-full h-14 p-4 text-lg border border-gray-300 rounded-lg shadow-md focus:ring-2 focus:ring-purple-500 focus:outline-none"
         />
 
-        {/* Ask Button */}
+        {/* Ask Button - Disabled when input is empty */}
         <button
           onClick={askAI}
-          className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-3 rounded-lg font-bold text-xl hover:opacity-90 transition-all duration-300 shadow-lg"
+          disabled={!question.trim()} // Disable when question is empty
+          className={`w-full px-6 py-3 rounded-lg font-bold text-xl shadow-lg transition-all duration-300
+            ${question.trim()
+              ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:opacity-90"
+              : "bg-gray-300 text-gray-500 cursor-not-allowed"}`}
         >
           🚀 質問する
         </button>
