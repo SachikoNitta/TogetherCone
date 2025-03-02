@@ -40,22 +40,13 @@ TogetherCone is a simple AI-powered application that allows users to store text 
    npm install
    ```
 
-3. **Set up environment variables**  
-   Create a `.env.local` file in the root directory and add your API keys:
-
-   ```plaintext
-   PINECONE_API_KEY=your_pinecone_key
-   PINECONE_INDEX_NAME=your_index_name
-   TOGETHER_API_KEY=your_together_ai_key
-   ```
-
-4. **Start the development server**  
+3. **Start the development server**  
    ```bash
    npm run dev
    ```
    The app will be available at `http://localhost:3000`
 
-5. **For production build & serve**  
+4. **For production build & serve**  
    ```bash
    npm run build
    npm start
