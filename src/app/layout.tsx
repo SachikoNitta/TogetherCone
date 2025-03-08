@@ -16,13 +16,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <nav className="fixed top-0 left-0 w-full h-16 bg-white shadow-md flex justify-center items-center z-50">
           <div className="max-w-3xl flex space-x-6">
             <Link
-              href="/usage"
+              href="/"
               className="px-4 py-2 text-gray-700 font-semibold rounded-lg hover:bg-gray-200 transition-all"
             >
               📖 Usage
             </Link>
             <Link
-              href="/"
+              href="/setting"
               className="px-4 py-2 text-gray-700 font-semibold rounded-lg hover:bg-gray-200 transition-all"
             >
               🔑 Settings
