@@ -25,7 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               href="/"
               className="px-4 py-2 text-gray-700 font-semibold rounded-lg hover:bg-gray-200 transition-all"
             >
-              🔑 API Keys
+              🔑 Settings
             </Link>
             <Link
               href="/store"
