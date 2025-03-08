@@ -4,6 +4,7 @@ import { useState } from "react";
 export default function AskPage() {
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
+  const [answerComplete, setAnswerComplete] = useState(false);
   const [completeQuestion, setCompleteQuestion] = useState("");
 
   const askAI = async () => {
@@ -30,6 +31,7 @@ export default function AskPage() {
 
       const result = JSON.parse(textResponse);
       setAnswer(result.answer || "No answer received.");
+      setAnswerComplete(true);
       setCompleteQuestion(result.question || "No question received");
 
     } catch (error) {
@@ -76,11 +78,23 @@ export default function AskPage() {
 
       {/* Display Answer */}
       {answer && (
+        <>
+          <div className="mt-4 p-5 bg-white rounded-lg shadow-md border border-gray-300">
+            <h2 className="text-xl font-semibold text-gray-800">🤖 AIの回答</h2>
+            <p className="mt-2 text-gray-600">{answer}</p>
+          </div>
+        </>
+      )}
+
+      {/* Display Hints */}
+      {answerComplete && (
         <div className="mt-4 p-5 bg-white rounded-lg shadow-md border border-gray-300">
-          <h2 className="text-xl font-semibold text-gray-800">🤖 AIの回答</h2>
-          <p className="mt-2 text-gray-600">{answer}</p>
+          <h2 className="text-xl font-semibold text-gray-800">💡 回答を向上させるためのヒント</h2>
+          <p>💡 インデックスに保存するドキュメントの長さを変える</p>
+          <p>💡 回答に使用しているTogether AIのLLMモデルを変更する</p>
         </div>
       )}
     </div>
   );
+    
 }

@@ -7,6 +7,7 @@ export default function Home() {
   const [pineconeIndex, setPineconeIndex] = useState("");
   const [pineconeIndexHost, setPineconeIndexHost] = useState("");
   const [togetherApiKey, settogetherApiKey] = useState("");
+  const [togetherAiModel, settogetherAiModel] = useState("meta-llama/Llama-3.3-70B-Instruct-Turbo-Free");
   const [showKeys, setShowKeys] = useState(false); // 👀 Toggle key visibility
 
   useEffect(() => {
@@ -15,6 +16,7 @@ export default function Home() {
     setPineconeIndex(Cookies.get("pineconeIndex") || "");
     setPineconeIndexHost(Cookies.get("pineconeIndexHost") || "");
     settogetherApiKey(Cookies.get("togetherApiKey") || "");
+    settogetherAiModel(Cookies.get("togetherAiModel") || "meta-llama/Llama-3.3-70B-Instruct-Turbo-Free");
   }, []);
 
   const saveKeys = () => {
@@ -23,7 +25,7 @@ export default function Home() {
     Cookies.set("pineconeIndex", pineconeIndex, { expires: 7 });
     Cookies.set("pineconeIndexHost", pineconeIndexHost, { expires: 7 });
     Cookies.set("togetherApiKey", togetherApiKey, { expires: 7 });
-
+    Cookies.set("togetherAiModel", togetherAiModel, { expires: 7 });
     alert("✅ API Keys saved in cookies!");
   };
 
@@ -80,6 +82,17 @@ export default function Home() {
           onChange={(e) => settogetherApiKey(e.target.value)}
           className="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
         />
+
+        {/* Together AI LLM options */}
+        <label className="text-sm font-semibold">Together AI LLM Model ID</label>
+        <input
+          type="text"
+          placeholder="meta-llama/Llama-3.3-70B-Instruct-Turbo-Free"
+          value={togetherAiModel}
+          onChange={(e) => settogetherAiModel(e.target.value)}
+          className="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+        />
+
 
         {/* Buttons */}
         <div className="flex gap-4 mt-4">
