@@ -38,7 +38,7 @@ export default function Home() {
   };
 
   return (
-    <div className="max-w-lg mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
+    <div className="max-w-lg mx-auto mt-10 p-6 bg-gray-50 shadow-lg rounded-lg">
       <h1 className="text-4xl font-bold text-purple-700 mb-6 text-center">
         🔑 APIキーの設定
       </h1>
