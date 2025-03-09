@@ -22,10 +22,30 @@ export default function UsagePage() {
       <section className="mb-6 p-6 bg-gray-50 shadow-md rounded-lg">
         <h2 className="text-2xl font-semibold text-gray-700 mb-3">🚀 このアプリで何ができるの？</h2>
         <p className="text-gray-600">TogetherCone は以下の機能を提供します：</p>
+
         <ul className="mt-3 space-y-2 text-gray-600">
           <li>✅ <strong>Pinecone にデータを保存</strong></li>
-          <li>✅ <strong>Together AI に質問し、Pinecone のデータを活用して回答を生成</strong></li>
+          <li>✅ <strong>Together AIを通じてAIに質問し、Pinecone のデータを活用して回答を生成</strong></li>
         </ul>
+
+        <details className="mt-4">
+          <summary className="text-sm font-semibold text-blue-600 cursor-pointer">
+            Pineconeとは？
+          </summary>
+          <ol className="list-decimal list-inside text-sm text-gray-600 mt-2">
+            <li>高速でスケーラブルなベクトルデータベースを提供するクラウドサービスです。</li>
+            <li>TogetherConeではドキュメントの保存と類似ドキュメントの抽出に使用しています。</li>
+          </ol>
+        </details>
+        <details className="mt-2">
+          <summary className="text-sm font-semibold text-blue-600 cursor-pointer">
+            Together AIとは？
+          </summary>
+          <ol className="list-decimal list-inside text-sm text-gray-600 mt-2">
+            <li>MetaのLlama3を始めとするオープンソースのLLMモデルをAPI経由で利用できるクラウドサービスです。</li>
+            <li>TogetherConeではAIによる回答の生成に使用しています。</li>
+          </ol>
+        </details>
       </section>
 
       {/* 🎯 3ステップで気軽にAI検索をしよう */}
@@ -50,7 +70,7 @@ export default function UsagePage() {
         {/* Step 3: 検索 */}
         <Link href="/ask" className="block w-full mt-4">
           <button className="w-full bg-gradient-to-r from-purple-500 to-indigo-500 text-white text-lg font-semibold px-6 py-4 rounded-lg shadow-md hover:opacity-90 transition">
-            🔎 Together AI に質問する
+            🔎 AI に質問する
           </button>
         </Link>
       </section>
