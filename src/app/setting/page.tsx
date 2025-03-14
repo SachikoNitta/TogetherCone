@@ -38,7 +38,7 @@ export default function Settings() {
   };
 
   return (
-    <div className="mt-10 p-6 flex flex-col items-expand">
+    <div className="mt-10 p-6 flex flex-col items-stretch">
       {/* 🌲 Pinecone 設定 */}
       <section className="mb-6 p-6 bg-gray-50 shadow-md rounded-lg">
         <h2 className="text-2xl font-semibold text-gray-800 mb-3">🌲 Pineconeの設定</h2>
