@@ -1,6 +1,15 @@
 "use client";
 import { useState } from "react";
 
+/**
+ * Renders a UI for submitting and storing text data via an API.
+ *
+ * This component provides a textarea for input, a button to initiate storage, and an area to display status messages.
+ * Upon clicking the button, it verifies the input is not empty, sends a POST request with the text,
+ * and updates the status based on the API response, clearing the input on success.
+ *
+ * @returns A JSX element representing the StorePage component.
+ */
 export default function StorePage() {
   const [text, setText] = useState("");
   const [status, setStatus] = useState("");
@@ -41,7 +50,7 @@ export default function StorePage() {
   };
 
   return (
-    <div className="mt-10 p-6 flex flex-col items-stretch">
+    <div className="mt-10 p-6 flex flex-col items-expand">
       {/* 📂 入力エリア */}
       <section className="mb-6 p-6 bg-gray-50 shadow-md rounded-lg">
         <h2 className="text-2xl font-semibold text-gray-800 mb-3">📌 テキストを入力</h2>

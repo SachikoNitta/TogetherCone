@@ -1,6 +1,15 @@
 "use client";
 import { useState } from "react";
 
+/**
+ * Renders the AskPage component that lets users submit a question to an AI and view its response.
+ *
+ * This component provides an input field for entering a question, a button to send the question to an AI API,
+ * and sections that display the AI's response, the submitted question, and tips for refining the query.
+ * It handles empty submissions and various error conditions by updating the UI with corresponding messages.
+ *
+ * @returns The AskPage component as a JSX element.
+ */
 export default function AskPage() {
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
@@ -40,7 +49,7 @@ export default function AskPage() {
   };
 
   return (
-    <div className="mt-10 p-6 flex flex-col items-stretch">
+    <div className="mt-10 p-6 flex flex-col items-expand">
       {/* ❓ 質問入力 */}
       <section className="mb-6 p-6 bg-gray-50 shadow-md rounded-lg">
         <h2 className="text-2xl font-semibold text-gray-800 mb-3">💬 質問を入力</h2>
