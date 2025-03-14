@@ -40,11 +40,7 @@ export default function AskPage() {
   };
 
   return (
-    <div className="max-w-3xl mx-auto mt-10 p-6 bg-white">
-      <h1 className="text-4xl font-bold text-purple-700 mb-6 text-center">
-        🔎 AIに質問する
-      </h1>
-
+    <div className="mt-10 p-6 flex flex-col items-expand">
       {/* ❓ 質問入力 */}
       <section className="mb-6 p-6 bg-gray-50 shadow-md rounded-lg">
         <h2 className="text-2xl font-semibold text-gray-800 mb-3">💬 質問を入力</h2>
@@ -69,7 +65,7 @@ export default function AskPage() {
               ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:opacity-90"
               : "bg-gray-300 text-gray-500 cursor-not-allowed"}`}
         >
-          🔎 質問する
+          🔎 Ask AI
         </button>
       </section>
 
