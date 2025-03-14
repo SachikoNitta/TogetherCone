@@ -7,6 +7,12 @@ export const metadata: Metadata = {
   description: "Simple chatbot using Pinecone and Together AI",
 };
 
+/**
+ * Renders the root layout for the application.
+ *
+ * This component provides the HTML structure, including a fixed navigation bar with client-side links
+ * and a main content area where page content is rendered.
+ */
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">

@@ -2,6 +2,15 @@
 import { useState, useEffect } from "react";
 import Cookies from "js-cookie";
 
+/**
+ * Renders a settings form for managing API keys and configuration values for Pinecone and Together AI.
+ *
+ * This component initializes API key, index, host, and model settings from cookies on mount. It provides
+ * input fields for users to update these settings, with the ability to toggle between masked and visible API keys.
+ * Clicking the "Update Settings" button saves the current configuration back to cookies.
+ *
+ * @returns A JSX element representing the settings form.
+ */
 export default function Settings() {
   // 🔹 Pinecone State
   const [pineconeKey, setPineconeKey] = useState("");

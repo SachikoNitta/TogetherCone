@@ -1,6 +1,15 @@
 "use client";
 import { useState } from "react";
 
+/**
+ * Renders a UI for submitting and storing text data via an API.
+ *
+ * This component provides a textarea for input, a button to initiate storage, and an area to display status messages.
+ * Upon clicking the button, it verifies the input is not empty, sends a POST request with the text,
+ * and updates the status based on the API response, clearing the input on success.
+ *
+ * @returns A JSX element representing the StorePage component.
+ */
 export default function StorePage() {
   const [text, setText] = useState("");
   const [status, setStatus] = useState("");
