@@ -10,8 +10,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-gray-100 flex flex-col items-center">
-        
+      <body>    
         {/* 🔹 Fixed Navigation Bar */}
         <nav className="fixed top-0 left-0 w-full h-16 bg-white shadow-md flex justify-center items-center z-50">
           <div className="max-w-3xl flex space-x-6">
@@ -43,7 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </nav>
 
         {/* 🔹 Page Content */}
-        <main className="w-full max-w-3xl my-20 p-6 bg-white shadow-lg rounded-lg">
+        <main className="w-full h-full p-6 bg-white">
           {children}
         </main>
       </body>

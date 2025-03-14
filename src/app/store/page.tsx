@@ -41,11 +41,7 @@ export default function StorePage() {
   };
 
   return (
-    <div className="max-w-3xl mx-auto mt-10 p-6 bg-white">
-      <h1 className="text-4xl font-bold text-purple-700 mb-6 text-center">
-        📥 Pineconeにデータを保存する
-      </h1>
-
+    <div className="mt-10 p-6 flex flex-col items-stretch">
       {/* 📂 入力エリア */}
       <section className="mb-6 p-6 bg-gray-50 shadow-md rounded-lg">
         <h2 className="text-2xl font-semibold text-gray-800 mb-3">📌 テキストを入力</h2>
@@ -55,7 +51,7 @@ export default function StorePage() {
           placeholder="Enter text to store..."
           value={text}
           onChange={(e) => setText(e.target.value)}
-          className="w-full p-4 border border-gray-300 rounded-lg shadow-md focus:ring-2 focus:ring-green-500 focus:outline-none resize-none h-60 text-lg"
+          className="w-full p-4 border border-gray-300 rounded-lg shadow-md focus:ring-2 focus:ring-green-500 focus:outline-none resize-none h-120 text-lg"
         ></textarea>
         
       </section>
@@ -70,7 +66,7 @@ export default function StorePage() {
               ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:opacity-90" 
               : "bg-gray-300 text-gray-500 cursor-not-allowed"}`}
         >
-          📥 テキストを保存
+          📥 Store Text
         </button>
       </section>
 

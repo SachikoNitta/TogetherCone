@@ -38,11 +38,7 @@ export default function Settings() {
   };
 
   return (
-    <div className="max-w-3xl mx-auto mt-10 p-6 bg-white">
-      <h1 className="text-4xl font-bold text-purple-700 mb-6 text-center">
-        🔑 APIキーの設定
-      </h1>
-
+    <div className="mt-10 p-6 flex flex-col items-stretch">
       {/* 🌲 Pinecone 設定 */}
       <section className="mb-6 p-6 bg-gray-50 shadow-md rounded-lg">
         <h2 className="text-2xl font-semibold text-gray-800 mb-3">🌲 Pineconeの設定</h2>
@@ -164,14 +160,14 @@ export default function Settings() {
             onClick={() => setShowKeys(!showKeys)}
             className="w-full bg-gradient-to-r from-gray-300 to-gray-400 text-black px-4 py-5 rounded-md font-semibold hover:opacity-90 transition-all"
           >
-            {showKeys ? "🔒 キーを隠す" : "👀 キーを確認する"}
+            {showKeys ? "🔒 Hide Keys" : "👀 Show Keys"}
           </button>
 
           <button
             onClick={saveKeys}
             className="w-full bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-4 py-5 rounded-md font-semibold hover:opacity-90 transition-all"
           >
-            ✅ 設定を保存する
+            ✅ Update Settings
           </button>
         </div>
       </section>
