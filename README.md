@@ -2,7 +2,7 @@
 
 TogetherCone is a simple AI-powered application that allows users to store text in **Pinecone** and retrieve relevant information using **Together AI** for answering queries.
 
-🔗 **Live Demo**: [togethercone-jpq9.vercel.app](https://togethercone-jpq9.vercel.app)
+🔗 **Live Demo**: [[togethercone-jpq9.vercel.app](https://togethercone-jpq9.vercel.app)](https://togethercone.vercel.app)
 
 ---
 
