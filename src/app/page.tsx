@@ -1,6 +1,11 @@
 "use client";
 import Link from "next/link";
 
+/**
+ * Renders the usage instructions page for the TogetherCone application.
+ *
+ * This React component presents warnings about API key storage using cookies, outlines the application's features—including data storage via Pinecone and AI query functionality through Together AI—and provides a three-step guide for users to begin using AI search. The page is styled with Tailwind CSS and utilizes Next.js Link components for navigation.
+ */
 export default function UsagePage() {
   return (
     <div className="mt-10 p-6  flex flex-col items-stretch">
